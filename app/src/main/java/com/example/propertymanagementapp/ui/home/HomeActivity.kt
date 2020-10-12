@@ -11,6 +11,7 @@ import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.propertymanagementapp.R
+import com.example.propertymanagementapp.data.repositories.UserRepository
 import com.example.propertymanagementapp.helpers.TokenManager
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
@@ -33,7 +34,8 @@ class HomeActivity : AppCompatActivity() {
 
     private fun init() {
         button_home_logout.setOnClickListener {
-            dialogLogout()
+            UserRepository().getProperties()
+            //dialogLogout()
         }
 
         button_to_add_property.setOnClickListener {

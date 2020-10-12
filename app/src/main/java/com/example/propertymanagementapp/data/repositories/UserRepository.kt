@@ -1,14 +1,15 @@
 package com.example.propertymanagementapp.data.repositories
 
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.propertymanagementapp.data.model.LoginResponse
+import com.example.propertymanagementapp.data.model.PropertyResponse
 import com.example.propertymanagementapp.data.network.MyApi
 import com.example.propertymanagementapp.helpers.TokenManager
-import com.example.propertymanagementapp.ui.auth.LoginActivity
-import kotlinx.android.synthetic.main.activity_login.*
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.observers.DisposableSingleObserver
+import io.reactivex.schedulers.Schedulers
 
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -112,5 +113,22 @@ class UserRepository {
             })
 
         return registerResponse
+    }
+
+    fun getProperties(){
+        MyApi().getProperties()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeWith(object: DisposableSingleObserver<PropertyResponse>(){
+                override fun onSuccess(response: PropertyResponse) {
+                    //add response.data to list
+                    Log.d("Suc Properties Response", "Nice job!")
+                }
+
+                override fun onError(e: Throwable) {
+                    Log.d("bad properties Response", e.toString())
+                }
+
+            })
     }
 }
