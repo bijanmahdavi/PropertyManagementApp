@@ -1,4 +1,4 @@
-package com.example.propertymanagementapp.ui.auth
+package com.example.propertymanagementapp.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

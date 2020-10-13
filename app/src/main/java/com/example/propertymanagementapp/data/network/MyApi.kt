@@ -46,6 +46,16 @@ interface MyApi {
     @GET("property")
     fun getProperties(): Single<PropertyResponse>
 
+    @FormUrlEncoded
+    @POST("property")
+    fun addProperty(
+        @Field("address") address: String,
+        @Field("city") city: String,
+        @Field("country") country: String,
+        @Field("purchasePrice") purchasePrice: String,
+        @Field("state") state: String
+    ): Call<ResponseBody>
+
 
 
 //    @FormUrlEncoded

@@ -2,11 +2,11 @@ package com.example.propertymanagementapp.data.model
 
 data class PropertyResponse(
     val count: Int,
-    val `data`: List<Data>,
+    val data: ArrayList<Property>,
     val error: Boolean
 )
 
-data class Data(
+data class Property(
     val __v: Int,
     val _id: String,
     val address: String,

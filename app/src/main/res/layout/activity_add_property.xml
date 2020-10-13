@@ -1,0 +1,278 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:id="@+id/address_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Enter your rental property information"
+            android:textColor="@color/colorLight"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:background="@color/colorLight"
+            android:hint="Street Address"
+            android:padding="2dp">
+
+            <EditText
+                android:id="@+id/text_input_address"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="44dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginEnd="44dp"
+            android:layout_marginStart="43dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="4"
+                android:background="@color/colorLight"
+                android:hint="City"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorLight"
+                android:hint="State"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="44dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginEnd="44dp"
+            android:layout_marginStart="43dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorLight"
+                android:hint="Zipcode"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_zip"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="4"
+                android:background="@color/colorLight"
+                android:hint="Country"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/property_details"
+        android:layout_below="@+id/address_section"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Enter your property details"
+            android:textColor="@color/colorLight"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="44dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginEnd="44dp"
+            android:layout_marginStart="43dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorLight"
+                android:hint="Status"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorLight"
+                android:hint="Multiple Units?"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_multiple"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="44dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginEnd="44dp"
+            android:layout_marginStart="43dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorLight"
+                android:hint="Purchase Price"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_purchase_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorLight"
+                android:hint="Exclude on Dashboard?"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_exclude"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_add_new_property_add_photo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/property_details"
+        android:layout_centerHorizontal="true"
+        android:text="add_photo" />
+
+    <LinearLayout
+        android:layout_below="@+id/button_add_new_property_add_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="43dp"
+        android:orientation="vertical"
+        android:layout_marginRight="44dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginEnd="44dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Does this property have a mortgage?"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:textColor="@color/colorLight" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/colorLight"
+                android:hint="Yes or No?"
+                android:padding="2dp">
+
+                <EditText
+                    android:id="@+id/text_input_mortgage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/button_add_new_property_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save and Add Property" />
+
+    </LinearLayout>
+
+</RelativeLayout>

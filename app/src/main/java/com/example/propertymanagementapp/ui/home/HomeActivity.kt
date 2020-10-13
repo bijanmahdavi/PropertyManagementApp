@@ -10,9 +10,15 @@ import android.provider.MediaStore
 import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.propertymanagementapp.R
-import com.example.propertymanagementapp.data.repositories.UserRepository
+import com.example.propertymanagementapp.adapters.PropertyListAdapter
+import com.example.propertymanagementapp.data.model.Property
+import com.example.propertymanagementapp.data.repositories.PropertyRepository
 import com.example.propertymanagementapp.helpers.TokenManager
+import com.example.propertymanagementapp.ui.activities.AddPropertyActivity
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -24,22 +30,42 @@ import com.karumi.dexter.listener.single.PermissionListener
 import kotlinx.android.synthetic.main.activity_home.*
 
 var CAMERA_REQUEST_CODE = 100
+var mPropList: ArrayList<Property> = ArrayList()
+var mLivePropList: LiveData<ArrayList<Property>>? = null
+lateinit var adapter: PropertyListAdapter
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        //mPropList = UserRepository().getProperties()
+        adapter = PropertyListAdapter(this, mPropList)
+        rv_property.adapter = adapter
+        rv_property.layoutManager = LinearLayoutManager(this)
+        adapter.setData(mPropList)
         init()
     }
 
     private fun init() {
         button_home_logout.setOnClickListener {
-            UserRepository().getProperties()
-            //dialogLogout()
+            dialogLogout()
         }
 
         button_to_add_property.setOnClickListener {
-            requestSinglePermission()
+            startActivity(Intent(this, AddPropertyActivity::class.java))
+            //requestSinglePermission()
+        }
+
+        get_prop_button.setOnClickListener {
+            mLivePropList = PropertyRepository().getProperties()
+            mLivePropList?.observe(this, object:Observer<ArrayList<Property>> {
+                override fun onChanged(t: ArrayList<Property>?) {
+                    adapter.setData(t!!)
+                }
+
+            })
+            //Log.d("HomeActivity", mPropList.toString())
+            //make progress bar invisible here
         }
     }
 
@@ -105,7 +131,7 @@ class HomeActivity : AppCompatActivity() {
     private fun openAppSettings(){
         var intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
         var uri = Uri.fromParts("package", packageName, null)
-        intent.setData(uri)
+        intent.data = uri
         startActivityForResult(intent, 101)
     }
 

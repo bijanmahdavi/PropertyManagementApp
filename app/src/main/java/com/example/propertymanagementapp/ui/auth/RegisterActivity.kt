@@ -1,9 +1,9 @@
 package com.example.propertymanagementapp.ui.auth
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.propertymanagementapp.R
+import com.example.propertymanagementapp.adapters.TabAdapter
 import kotlinx.android.synthetic.main.activity_register.*
 
 

@@ -3,6 +3,7 @@ package com.example.propertymanagementapp.data.repositories
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.propertymanagementapp.data.model.Property
 import com.example.propertymanagementapp.data.model.LoginResponse
 import com.example.propertymanagementapp.data.model.PropertyResponse
 import com.example.propertymanagementapp.data.network.MyApi
@@ -113,22 +114,5 @@ class UserRepository {
             })
 
         return registerResponse
-    }
-
-    fun getProperties(){
-        MyApi().getProperties()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeWith(object: DisposableSingleObserver<PropertyResponse>(){
-                override fun onSuccess(response: PropertyResponse) {
-                    //add response.data to list
-                    Log.d("Suc Properties Response", "Nice job!")
-                }
-
-                override fun onError(e: Throwable) {
-                    Log.d("bad properties Response", e.toString())
-                }
-
-            })
     }
 }
