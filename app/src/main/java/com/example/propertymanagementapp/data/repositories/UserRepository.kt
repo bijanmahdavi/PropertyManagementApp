@@ -33,8 +33,9 @@ class UserRepository {
                         Log.d("suc_response" , response.toString())
                         loginResponse.value = "Login success"
                         var token = response.body()!!.token
+                        var userId = response.body()!!.user._id
                         Log.d("login_response", response.body().toString())
-                        TokenManager().storeToken(token)
+                        TokenManager().storeToken(token, userId)
                         Log.d("Token", TokenManager().isLoggedIn().toString())
                         //start next activity
                     } else {

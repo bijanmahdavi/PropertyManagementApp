@@ -2,17 +2,17 @@ package com.example.propertymanagementapp.data.network
 
 import com.example.propertymanagementapp.app.Config
 import com.example.propertymanagementapp.data.model.LoginResponse
+import com.example.propertymanagementapp.data.model.PostImageResponse
 import com.example.propertymanagementapp.data.model.PropertyResponse
+import com.example.propertymanagementapp.helpers.TokenManager
 import io.reactivex.Single
+import okhttp3.MultipartBody
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface MyApi {
 
@@ -46,6 +46,9 @@ interface MyApi {
     @GET("property")
     fun getProperties(): Single<PropertyResponse>
 
+    @GET("property/user/5f83be04c2ec1600179f8cf5"/*${TokenManager().getUserId()}"*/)
+    fun getPropertiesByUserId(): Single<PropertyResponse>
+
     @FormUrlEncoded
     @POST("property")
     fun addProperty(
@@ -55,6 +58,23 @@ interface MyApi {
         @Field("purchasePrice") purchasePrice: String,
         @Field("state") state: String
     ): Call<ResponseBody>
+
+    @FormUrlEncoded
+    @POST("property")
+    fun addProperty(
+        @Field("address") address: String,
+        @Field("city") city: String,
+        @Field("country") country: String,
+        @Field("purchasePrice") purchasePrice: String,
+        @Field("state") state: String,
+        @Field("location") location: String
+    ): Call<ResponseBody>
+
+    @Multipart
+    @POST("upload/property/picture")
+    fun uploadImage(
+        @Part image: MultipartBody.Part
+    ): Call<PostImageResponse>
 
 
 
@@ -66,6 +86,7 @@ interface MyApi {
 
 
     companion object{
+        var something = TokenManager().getUserId()
         operator fun invoke(): MyApi {
             return Retrofit.Builder()
                 .baseUrl(Config.BASE_URL)

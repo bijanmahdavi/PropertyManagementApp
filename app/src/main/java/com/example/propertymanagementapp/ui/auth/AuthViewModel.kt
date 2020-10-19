@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.example.propertymanagementapp.data.repositories.UserRepository
+import kotlinx.android.synthetic.main.activity_login.view.*
 
 class AuthViewModel() : ViewModel(){
 

@@ -17,13 +17,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Login"
+            android:textColor="#000"
+            android:text="Welcome!"
             android:textSize="32dp" />
 
         <ImageView
             android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="250dp"
             android:id="@+id/logo"
             android:src="@drawable/ic_logo" />
 
@@ -32,6 +33,7 @@
             android:id="@+id/edit_text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
             android:hint="Enter Email" />
 
         <EditText
@@ -39,9 +41,13 @@
             android:id="@+id/edit_text_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
             android:hint="Enter Password" />
 
         <Button
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"
+            android:paddingHorizontal="30dp"
             android:onClick="@{viewModel::onLoginButtonClick}"
             android:id="@+id/button_login"
             android:layout_width="match_parent"
@@ -52,6 +58,7 @@
             android:id="@+id/to_register_screen_text_button"
             android:text="Don't Have an account? Register here!"
             android:textColor="#000"
+            android:paddingTop="10dp"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

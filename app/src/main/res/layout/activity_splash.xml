@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_below="@id/cart_image_logo"
-        android:text="Todo!"
+        android:text="Hillow!"
         android:textSize="32dp"/>
 
     <ProgressBar

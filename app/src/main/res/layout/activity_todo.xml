@@ -11,21 +11,13 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="5dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tasks"
-            android:textSize="22dp"
-            android:gravity="center"
-            android:paddingVertical="10dp"/>
-
+        android:orientation="vertical">
+        <include layout="@layout/app_tool_bar"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/users_RV"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="5dp"
+            android:padding="10dp"
             android:layout_marginBottom="80dp"/>
 
 
