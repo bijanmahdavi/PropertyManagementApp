@@ -14,6 +14,7 @@ class AuthViewModel() : ViewModel(){
     var authListener: AuthListener? = null
 
     fun onLoginButtonClick(view: View){
+
         authListener?.onStarted()
         if(email.isNullOrEmpty() || password.isNullOrEmpty()){
             // failure

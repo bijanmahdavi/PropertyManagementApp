@@ -102,7 +102,7 @@ class PropertyRepository {
 
     fun getPropertiesById(id: String): LiveData<ArrayList<Property>> {
         var properties = MutableLiveData<ArrayList<Property>>()
-        MyApi().getPropertiesByUserId()
+        MyApi().getPropertiesByUserId(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object: DisposableSingleObserver<PropertyResponse>(){

@@ -80,11 +80,11 @@ class AddPropertyActivity : AppCompatActivity() {
             bottomSheetDialog.show()
         }
         view.button_camera.setOnClickListener {
-            requestSinglePermission()
+            requestCameraPermission()
         }
 
         view.button_gallery.setOnClickListener {
-            requestMultiplePermission()
+            requestGalleryPermission()
         }
     }
 
@@ -115,11 +115,37 @@ class AddPropertyActivity : AppCompatActivity() {
 
             }).check()
     }
-
-    private fun requestMultiplePermission() {
+    private fun requestCameraPermission() {
         Dexter.withContext(this)
             .withPermissions(
                 Manifest.permission.CAMERA,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            )
+            .withListener(object: MultiplePermissionsListener {
+                override fun onPermissionsChecked(report: MultiplePermissionsReport?) {
+                    // check if all permission are granter
+                    if(report!!.areAllPermissionsGranted()){
+                        Toast.makeText(applicationContext, "All permission granted", Toast.LENGTH_SHORT).show()
+                        openCamera()
+                    }
+                    // check for permanent denial of any permission
+                    if(report!!.isAnyPermissionPermanentlyDenied){
+                        //Toast.makeText(applicationContext, "permission denied permanently", Toast.LENGTH_SHORT).show()
+                        showDialogue()
+                    }
+                }
+
+                override fun onPermissionRationaleShouldBeShown(p0: MutableList<PermissionRequest>?, token: PermissionToken?) {
+                    token?.continuePermissionRequest()
+                }
+
+            })
+            .onSameThread()
+            .check()
+    }
+    private fun requestGalleryPermission() {
+        Dexter.withContext(this)
+            .withPermissions(
                 Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )

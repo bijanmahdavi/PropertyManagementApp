@@ -7,6 +7,19 @@
             type="com.example.propertymanagementapp.ui.auth.AuthViewModelRegister" />
     </data>
 
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progress_bar_register_landlord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:indeterminate="true"/>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,39 +37,56 @@
         <ImageView
             android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="150dp"
             android:id="@+id/logo"
             android:src="@drawable/ic_logo" />
-
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name">
         <EditText
             android:text="@={viewModelRegister.llName}"
             android:id="@+id/edit_text_name_landlord"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Name" />
-
-
+            android:hint="Enter Email">
         <EditText
             android:text="@={viewModelRegister.llEmail}"
             android:id="@+id/edit_text_email_landlord"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Email" />
+            android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Landlord Email">
         <EditText
             android:text="@={viewModelRegister.landlordEmail}"
             android:id="@+id/edit_text_landlordEmail_landlord"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Landlord Email" />
+            android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Password">
         <EditText
             android:text="@={viewModelRegister.llPassword}"
             android:id="@+id/edit_text_password_landlord"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Password" />
-
+            android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:onClick="@{viewModelRegister::onLandlordRegisterButtonClick}"
@@ -78,5 +108,5 @@
 
 
     </LinearLayout>
-
+    </RelativeLayout>
 </layout>

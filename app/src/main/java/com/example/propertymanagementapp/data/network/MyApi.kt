@@ -46,8 +46,8 @@ interface MyApi {
     @GET("property")
     fun getProperties(): Single<PropertyResponse>
 
-    @GET("property/user/5f83be04c2ec1600179f8cf5"/*${TokenManager().getUserId()}"*/)
-    fun getPropertiesByUserId(): Single<PropertyResponse>
+    @GET("property/user/{id}")
+    fun getPropertiesByUserId(@Path("id") id: String): Single<PropertyResponse>
 
     @FormUrlEncoded
     @POST("property")

@@ -6,9 +6,20 @@
             name="viewModel"
             type="com.example.propertymanagementapp.ui.auth.AuthViewModel" />
     </data>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progress_bar_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:indeterminate="true"/>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -24,25 +35,35 @@
         <ImageView
             android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="200dp"
             android:id="@+id/logo"
             android:src="@drawable/ic_logo" />
-
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Email">
         <EditText
             android:text="@={viewModel.email}"
             android:id="@+id/edit_text_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:hint="Enter Email" />
+            android:paddingBottom="10dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Password">
         <EditText
             android:text="@={viewModel.password}"
             android:id="@+id/edit_text_password"
+            android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:hint="Enter Password" />
+            android:paddingBottom="10dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:background="@color/colorPrimaryDark"
@@ -62,15 +83,6 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
-        <ProgressBar
-            android:layout_gravity="center"
-            android:id="@+id/progress_bar_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:indeterminate="true"/>
     </LinearLayout>
-
-
+</RelativeLayout>
 </layout>

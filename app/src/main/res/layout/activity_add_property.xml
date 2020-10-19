@@ -15,43 +15,66 @@
         android:textSize="27dp"
         android:layout_marginBottom="35dp"/>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address">
     <EditText
         android:id="@+id/text_input_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:hint="Address" />
+        android:layout_marginVertical="5dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City">
     <EditText
         android:id="@+id/text_input_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:hint="City" />
+        android:layout_marginVertical="5dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="State">
     <EditText
         android:id="@+id/text_input_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:hint="State" />
+        android:layout_marginVertical="5dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Country">
     <EditText
         android:id="@+id/text_input_country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:hint="Country" />
-
+        android:layout_marginVertical="5dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Purchase price">
     <EditText
         android:id="@+id/text_input_purchase_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        android:hint="Purchase price"
         android:layout_marginBottom="40dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
