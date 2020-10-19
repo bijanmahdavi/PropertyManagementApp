@@ -10,9 +10,10 @@
     android:layout_margin="4dp">
 <RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent"
     android:layout_margin="0dp">
-    <ImageView android:layout_width="130dp"
+    <ImageView android:layout_width="100dp"
+        android:layout_marginStart="20dp"
         android:id="@+id/alerts"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:layout_alignParentStart="true"
         android:background="@drawable/ic_baseline_add_alert"/>
     <TextView
@@ -26,10 +27,11 @@
         android:textStyle="bold"
         android:layout_below="@+id/alerts"
         />
-    <ImageView android:layout_width="130dp"
+    <ImageView android:layout_width="100dp"
+        android:layout_marginStart="30dp"
         android:id="@+id/properties"
        android:layout_toEndOf="@id/alerts"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:background="@drawable/ic_baseline_home"/>
     <TextView
         android:id="@+id/text_properties"
@@ -43,10 +45,11 @@
         android:layout_below="@id/properties"
         android:layout_toEndOf="@+id/text_alerts"
         />
-    <ImageView android:layout_width="130dp"
+    <ImageView android:layout_width="100dp"
+        android:layout_marginStart="30dp"
         android:id="@+id/tenants"
         android:layout_toRightOf="@id/properties"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:background="@drawable/ic_baseline_person"/>
     <TextView
         android:layout_width="wrap_content"
@@ -64,9 +67,10 @@
     <RelativeLayout android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_margin="10dp">
-        <ImageView android:layout_width="130dp"
+        <ImageView android:layout_width="100dp"
+            android:layout_marginStart="10dp"
             android:id="@+id/transactions"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:background="@drawable/ic_baseline_card"/>
         <TextView
             android:layout_width="wrap_content"
@@ -79,10 +83,11 @@
             android:textStyle="bold"
             android:layout_below="@id/transactions"
             />
-        <ImageView android:layout_width="130dp"
+        <ImageView android:layout_width="100dp"
+            android:layout_marginStart="30dp"
             android:id="@+id/collect_rent"
             android:layout_toEndOf="@id/transactions"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:background="@drawable/ic_baseline_money"/>
         <TextView
             android:layout_width="wrap_content"
@@ -96,15 +101,16 @@
             android:layout_toEndOf="@id/text_transactions"
             android:layout_below="@id/transactions"
             />
-        <ImageView android:layout_width="130dp"
+        <ImageView android:layout_width="100dp"
+            android:layout_marginStart="30dp"
             android:id="@+id/todo"
             android:layout_toEndOf="@id/collect_rent"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:background="@drawable/ic_baseline_check"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Todo List"
+            android:text="To do List"
             android:textSize="20sp"
             android:layout_marginStart="25dp"
             android:textColor="#000"
@@ -116,9 +122,10 @@
     <RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent"
         android:layout_margin="10dp">
         <ImageView
-            android:layout_width="130dp"
+            android:layout_width="100dp"
+            android:layout_marginStart="10dp"
             android:id="@+id/trips"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:background="@drawable/ic_baseline_directions_trips"/>
         <TextView
             android:layout_width="wrap_content"
@@ -132,10 +139,11 @@
             android:layout_below="@id/trips"
             />
         <ImageView
-            android:layout_width="130dp"
+            android:layout_width="100dp"
+            android:layout_marginStart="30dp"
             android:id="@+id/documents"
             android:layout_toEndOf="@id/trips"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:background="@drawable/ic_baseline_find_in_page_24"/>
         <TextView
             android:layout_width="wrap_content"
@@ -150,10 +158,11 @@
             android:layout_toEndOf="@+id/text_trips"
             />
         <ImageView
-            android:layout_width="130dp"
+            android:layout_width="100dp"
+            android:layout_marginStart="30dp"
             android:id="@+id/vendors"
             android:layout_toEndOf="@id/documents"
-            android:layout_height="100dp"
+            android:layout_height="70dp"
             android:background="@drawable/ic_baseline_vendors"/>
         <TextView
             android:layout_width="wrap_content"

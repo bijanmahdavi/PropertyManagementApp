@@ -25,6 +25,8 @@
         android:id="@+id/text_view_property_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="15sp"
         android:text="address: "/>
 
     <LinearLayout
@@ -36,11 +38,13 @@
             android:id="@+id/text_view_property_country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15sp"
             android:text="USA, "/>
         <TextView
             android:id="@+id/text_view_property_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="15sp"
             android:text="California "/>
     </LinearLayout>
 
@@ -48,8 +52,8 @@
         android:id="@+id/text_view_property_price"
         android:layout_width="wrap_content"
         android:textColor="#076811"
-        android:layout_marginTop="7dp"
-        android:textSize="27sp"
+        android:layout_marginTop="10dp"
+        android:textSize="21sp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:text="price "/>

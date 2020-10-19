@@ -18,8 +18,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="#000"
             android:text="Register"
             android:textSize="32dp" />
+        <ImageView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/logo"
+            android:src="@drawable/ic_logo" />
 
         <EditText
             android:text="@={viewModelRegister.name}"
@@ -47,6 +54,9 @@
         <Button
             android:onClick="@{viewModelRegister::onTenantRegisterButtonClick}"
             android:id="@+id/button_register"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"
+            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register" />

@@ -12,14 +12,15 @@
         android:textColor="#000"
         android:paddingBottom="5dp"
         android:text="List your new property with us:"
-        android:textSize="27dp" />
+        android:textSize="27dp"
+        android:layout_marginBottom="35dp"/>
 
     <EditText
         android:id="@+id/text_input_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        android:hint="Address of property" />
+        android:hint="Address" />
 
 
     <EditText
@@ -27,14 +28,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        android:hint="City of property" />
+        android:hint="City" />
 
     <EditText
         android:id="@+id/text_input_state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        android:hint="State of property" />
+        android:hint="State" />
 
 
     <EditText
@@ -42,14 +43,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        android:hint="Country of property" />
+        android:hint="Country" />
 
     <EditText
         android:id="@+id/text_input_purchase_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        android:hint="Purchase price of property" />
+        android:hint="Purchase price"
+        android:layout_marginBottom="40dp"/>
 
 
     <Button
