@@ -2,7 +2,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/colorLight">
 
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_gravity="center"
         android:textColor="#000"
         android:paddingBottom="5dp"
-        android:text="List your new property with us:"
+        android:text="List your property with us"
         android:textSize="27dp"
         android:layout_marginBottom="35dp"/>
 

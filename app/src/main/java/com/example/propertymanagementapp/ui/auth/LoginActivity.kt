@@ -28,6 +28,7 @@ class LoginActivity : AppCompatActivity(), AuthListener {
     }
 
     private fun init() {
+        progress_bar_login.visibility = View.INVISIBLE
         to_register_screen_text_button.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }

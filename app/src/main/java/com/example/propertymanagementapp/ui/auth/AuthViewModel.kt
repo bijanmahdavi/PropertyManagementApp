@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.View
 import androidx.lifecycle.ViewModel
 import com.example.propertymanagementapp.data.repositories.UserRepository
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.view.*
 
 class AuthViewModel() : ViewModel(){
@@ -14,7 +15,7 @@ class AuthViewModel() : ViewModel(){
     var authListener: AuthListener? = null
 
     fun onLoginButtonClick(view: View){
-
+        //progress_bar_login.visibility = View.VISIBLE
         authListener?.onStarted()
         if(email.isNullOrEmpty() || password.isNullOrEmpty()){
             // failure

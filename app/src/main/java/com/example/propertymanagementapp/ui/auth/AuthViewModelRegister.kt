@@ -19,6 +19,7 @@ class AuthViewModelRegister : ViewModel(){
     var authListener: AuthListener? = null
 
     fun onTenantRegisterButtonClick(view: View){
+
         authListener?.onStarted()
         if(email.isNullOrEmpty() || password.isNullOrEmpty() || name.isNullOrEmpty()) {
             // failure

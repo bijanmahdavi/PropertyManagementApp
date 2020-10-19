@@ -1,6 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="@color/colorLight">
 
     <ImageView
         android:layout_margin="30dp"
@@ -15,7 +16,8 @@
         android:id="@+id/main_login_button"
         android:layout_below="@id/logo"
         android:layout_margin="50dp"
-        android:textColor="#000"
+        android:textColor="#fff"
+        android:background="@color/colorPrimaryDark"
         android:text="Login" />
     <Button
         android:layout_width="wrap_content"
@@ -24,6 +26,7 @@
         android:layout_below="@id/logo"
         android:layout_toEndOf="@id/main_login_button"
         android:layout_margin="50dp"
-        android:textColor="#000"
+        android:textColor="#fff"
+        android:background="@color/colorPrimaryDark"
         android:text="Register" />
 </RelativeLayout>
